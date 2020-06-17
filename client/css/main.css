@@ -1,0 +1,124 @@
+:root {
+    --Colour1: #ffffff;
+    --backgroundCol: #f9ffff;
+    --navCol: #e3ffea;
+    --navBorderCol: #075219;
+    --h1Col: #efffef;
+    --cardTopCol: #440000;
+    --cardMainCol: #feffff;
+    --black: #000000;
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    transition: .15s ease;
+}
+
+body, html {
+    height: 100%;
+    background-color: var(--backgroundCol);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 48px;
+    border-bottom: 2px solid var(--navBorderCol);
+    background-color: var(--navCol);
+}
+
+nav > * {
+    height: 100;
+    line-height: 20px;
+    padding: 10px;
+}
+
+div#wrapper {
+    width: 100%;
+}
+
+main#container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+h1 {
+    margin: 5px auto;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--h1Col);
+    max-width: 300px;
+}
+
+section.gameCard {
+    width: 80%;
+    margin: 5px auto;
+    border: 2px solid black;
+    border-radius: 7px;
+    text-align: center;
+    max-width: 200px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px 2px #000000;
+}
+
+section.gameCard:hover {
+    transform: translateY(-1rem);
+}
+
+section.gameCard > div.cardTop {
+    border-bottom: 2px solid black;
+    background-color: var(--cardTopCol);
+}
+
+section.gameCard > div.cardTop > h2 {
+    color: #ffffff;
+}
+
+section.gameCard > div.cardMain {
+    border-bottom: 2px solid black;
+    background-color: var(--cardMainCol);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+section.gameCard > div.cardFoot {
+    background-color: var(--black);
+    color: #ffffff;
+}
+
+section.gameCard > div.cardFoot > p {
+    font-size: 0.8em;
+}
+
+section.faceDown {
+    background-color: white;
+    background-image: url("../svg/background.svg");
+    background-repeat: round;
+    background-size: 2rem 2rem;
+    cursor: default;
+}
+
+section.faceDown:hover {
+    transform: none;
+}
+
+section.faceDown  * {
+    display: none;
+    border: none;
+}
+
+section.faceDown > div.cardMain {
+    display: none;
+}
