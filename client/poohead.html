@@ -14,7 +14,13 @@
         </nav>
         <div id="wrapper">
             <h1>Poohead</h1>
-            <button type="button" id="addCardTest"></button>
+            <section class="options">
+                <label for="noPlayers">Number of Players</label>
+                <input type="number" name="noPlayers" id="noPlayers" placeholder="number of players" min="2" max="7">
+                <button type="button" id="drawCard">Draw Card</button>
+                <button type="button" id="resetDeck">Reset Deck</button>
+                <button type="button" id="start">Start Game</button>
+            </section>
             <main id="container">
                 <div id="opponantHand">
 
@@ -26,10 +32,27 @@
                     <section class="card topStack" id="Diamonds2"></section>
                 </div>
                 <div id="playerHand">
-                    <section class="card" id="Diamonds3"></section>
-                    <section class="card" id="Hearts3"></section>
-                    <section class="card" id="Clubs4"></section>
-                    <section class="card" id="SpadesAce"></section>
+                    <div class="initialCards">
+                        <div class="hiddenAndShown">
+                            <section class="card faceDown hiddenCard"></section>
+                            <section class="card shownCard"></section>
+                        </div>
+                        <div class="hiddenAndShown">
+                            <section class="card faceDown hiddenCard"></section>
+                            <section class="card shownCard"></section>
+                        </div>
+                        <div class="hiddenAndShown">
+                            <section class="card faceDown hiddenCard"></section>
+                            <section class="card shownCard"></section>
+                        </div>
+                    </div>
+                    <div class="personalCards">
+                        <section class="card" id="Diamonds3"></section>
+                        <section class="card" id="Hearts3"></section>
+                        <section class="card" id="Clubs4"></section>
+                        <section class="card" id="SpadesAce"></section>
+                    </div>
+
                 </div>
             </main>
         </div>
@@ -41,6 +64,12 @@
         </template>
         <template id="opponantCard">
             <section class="card faceDown"></section>
+        </template>
+        <template id="hiddenCard">
+            <section class="card faceDown hiddenCard"></section>
+        </template>
+        <template id="shownCard">
+            <section class="card shownCard"></section>
         </template>
     </body>
     <script src="./js/client.js" charset="utf-8"></script>

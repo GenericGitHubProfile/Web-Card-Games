@@ -7,6 +7,7 @@
     --cardTopCol: #440000;
     --cardMainCol: #feffff;
     --black: #000000;
+    --semiTransBg: rgba(0, 0, 0, 0.2);
     font-size: 16px;
 }
 
@@ -120,4 +121,18 @@ section.faceDown  * {
 
 section.faceDown > div.cardMain {
     display: none;
+}
+
+section.options {
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    margin: .1rem;
+    padding: .4rem;
+    background-color: var(--semiTransBg);
+    border-radius: 3px;
+}
+
+section.options > button {
+    margin-top: .5rem;
 }

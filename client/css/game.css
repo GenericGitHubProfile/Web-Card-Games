@@ -31,6 +31,7 @@
     border: 2px solid black;
     background-color: white;
     border-radius: 3px;
+    background-size: contain;
 }
 
 .card:hover {
@@ -45,27 +46,22 @@
 
 #SpadesAce {
     background-image: url(../cards/spades/AS.png);
-    background-size: contain;
 }
 
 #Diamonds2 {
     background-image: url(../cards/diamonds/2D.png);
-    background-size: contain;
 }
 
 #Diamonds3 {
     background-image: url(../cards/diamonds/3D.png);
-    background-size: contain;
 }
 
 #Hearts3 {
     background-image: url(../cards/hearts/heartsThree.png);
-    background-size: contain;
 }
 
 #Clubs4 {
     background-image: url(../cards/clubs/4C.png);
-    background-size: contain;
 }
 
 #QD {

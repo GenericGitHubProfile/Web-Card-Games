@@ -1,25 +1,16 @@
-/*
-* Single card, has a suit and a value
-*/
-export class Card {
-    constructor(suit, value) {
-        this.suit = suit;
-        this.value = value;
-    }
-}
-
+import { Card } from './card.mjs';
+import { DeckBase } from './deckBase.mjs';
 /*
 * Deck of cards, 4 suits, 13 cards per suit
 */
-export class Deck {
+export class Deck extends DeckBase {
     /*
     * initialise Deck
     */
     constructor() {
-        this.cards = [];
-        this._suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
-        this._cardValue = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
-        this.resetDeck();
+        super();
+        // Populates the initial Deck
+        this.resetDeckAndShuffle();
     }
 
     /*
@@ -50,7 +41,14 @@ export class Deck {
                 this.cards.push(new Card(item, el));
             });
         });
-        // this.shuffleDeck();
+    }
+
+    /*
+    * Resets the deck and then shuffles
+    */
+    resetDeckAndShuffle() {
+        this.resetDeck();
+        this.shuffleDeck();
     }
 
     /*
@@ -68,6 +66,13 @@ export class Deck {
                 }
             });
         });
+    }
+
+    /*
+    * Resets the deck, excluding the given array of cards and then shuffles
+    */
+    resetDeckExcludeShuffle(excludeArr = []) {
+        this.resetDeckWithoutCards(excludeArr);
         this.shuffleDeck();
     }
 
@@ -76,7 +81,6 @@ export class Deck {
     */
     removeCard(card = null) {
         if(!this._cardValue.includes(card.value) || !this._suits.includes(card.suit)) return false;
-        // this.cards.splice(this.findCard(card), 1);
         let cardIndex = this.findCard(card);
         return ((cardIndex >= 0) ? this.cards.splice(cardIndex, 1) : false);
     }
@@ -87,5 +91,9 @@ export class Deck {
     findCard(card = null) {
         if(!this._cardValue.includes(card.value) || !this._suits.includes(card.suit)) return false;
         return this.cards.findIndex((item) => item.suit === card.suit && item.value === card.value);
+    }
+
+    deckLength() {
+        return this.cards.length;
     }
 };
