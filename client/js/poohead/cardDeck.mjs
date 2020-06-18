@@ -1,3 +1,16 @@
+/*
+* Single card, has a suit and a value
+*/
+export class Card {
+    constructor(suit, value) {
+        this.suit = suit;
+        this.value = value;
+    }
+}
+
+/*
+* Deck of cards, 4 suits, 13 cards per suit
+*/
 export class Deck {
     /*
     * initialise Deck
@@ -5,7 +18,7 @@ export class Deck {
     constructor() {
         this.cards = [];
         this._suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
-        this._cardBase = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
+        this._cardValue = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
         this.resetDeck();
     }
 
@@ -33,8 +46,26 @@ export class Deck {
     resetDeck() {
         this.cards = [];
         this._suits.forEach((item, i) => {
-            this._cardBase.forEach((el, j) => {
-                this.cards.push({"suit": item, "value": el});
+            this._cardValue.forEach((el, j) => {
+                this.cards.push(new Card(item, el));
+            });
+        });
+        // this.shuffleDeck();
+    }
+
+    /*
+    * Resets the Deck while excluding the cards in the array
+    */
+    resetDeckWithoutCards(excludeArr = []) {
+        // Assume the excludeArr only contains Card objects
+        this.cards = [];
+        console.log(excludeArr);
+        this._suits.forEach((item, i) => {
+            this._cardValue.forEach((el, j) => {
+                let newCard = new Card(item, el);
+                if (!excludeArr.some((e) => (e.suit === item && e.value === el))) {
+                    this.cards.push(newCard);
+                }
             });
         });
         this.shuffleDeck();
@@ -42,15 +73,19 @@ export class Deck {
 
     /*
     * Removes a given card
-    * OPTIMIZE: Make it so that a list is given and those specific cards are not entered
-    * rather than having a function to remove them after the full list is created
     */
-    removeCard(card) {
-        console.log(card);
-        this.cards.filter((item) => item === card);
-        // const INDEX = this.cards.indexOf(card);
-        // if(INDEX > -1) {
-        //     this.cards.splice(INDEX, 1);
-        // }
+    removeCard(card = null) {
+        if(!this._cardValue.includes(card.value) || !this._suits.includes(card.suit)) return false;
+        // this.cards.splice(this.findCard(card), 1);
+        let cardIndex = this.findCard(card);
+        return ((cardIndex >= 0) ? this.cards.splice(cardIndex, 1) : false);
     }
-}
+
+    /*
+    * Finds a given card
+    */
+    findCard(card = null) {
+        if(!this._cardValue.includes(card.value) || !this._suits.includes(card.suit)) return false;
+        return this.cards.findIndex((item) => item.suit === card.suit && item.value === card.value);
+    }
+};

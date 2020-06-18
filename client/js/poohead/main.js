@@ -1,11 +1,10 @@
-import { Deck } from './cardDeck.mjs';
+import { Card, Deck } from './cardDeck.mjs';
 
 let pooheadCards = new Deck();
 console.log(pooheadCards.cards);
-pooheadCards.removeCard({"suit": "Diamonds", "value": "3"});
-pooheadCards.removeCard({"suit": "Hearts", "value": "3"});
-pooheadCards.removeCard({"suit": "Clubs", "value": "4"});
-pooheadCards.removeCard({"suit": "Spades", "value": "Ace"});
+// let cardsExclude = [new Card("Diamonds", "3"), new Card("Hearts", "3")];
+pooheadCards.removeCard(new Card("Diamonds", "3"));
+pooheadCards.removeCard(new Card("Diamonds", "3"));
 console.log(pooheadCards.cards);
 
 
@@ -13,4 +12,5 @@ console.log(pooheadCards.cards);
 let playedCards = Array.from(document.getElementById('playedStack').children);
 playedCards.forEach((item, i) => {
     item.style.transform = `rotate(${Math.floor(Math.random() * 180)}deg)`;
+    // translate3d(${Math.floor(Math.random() * 2)}rem, ${Math.floor(Math.random() * 2)}rem, z);
 });

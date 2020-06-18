@@ -1,11 +1,17 @@
 #playerHand {
     position: absolute;
     bottom: 0;
+    left: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: auto;
     margin-top: auto;
+    z-index: 3;
+}
+
+#playerHand > .card:hover {
+    cursor: pointer;
 }
 
 #playedStack {
@@ -23,14 +29,14 @@
     width: 5rem;
     height: 7rem;
     border: 2px solid black;
+    background-color: white;
+    border-radius: 3px;
 }
 
 .card:hover {
     transition: .1s;
     transform: translateY(-2rem) scale(1.55);
     z-index: 2;
-    /* transform: rotate3d(720deg, 360deg, 0); */
-    /* transform: rotateY(360deg) scale(1.55); */
 }
 
 .topStack {
@@ -53,7 +59,7 @@
 }
 
 #Hearts3 {
-    background-image: url(../cards/hearts/3H.png);
+    background-image: url(../cards/hearts/heartsThree.png);
     background-size: contain;
 }
 

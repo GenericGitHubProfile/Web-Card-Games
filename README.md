@@ -1,5 +1,7 @@
 Phone Card Games
 =================================
+- Before any serverside development, simple local game must be playable
+
 Primary features to be implemented
 ---------------------------------
 > CORE
@@ -29,8 +31,26 @@ Games to be implemented
 - when deck is empty, take all but the last played card from the played array
 - put them back into the deck array so they can be redistributed properly
 
+>Poohead rules
+- only play cards higher than one on top of stack
+- Ace's are high
+- can play special cards at any time
+- 2's reset the stack down to 2
+- 7's allow a user to decide if ONLY the next card is higher or lower
+- 10's remove the cards from the game, until the end of the round
+- Four of the same card value in a row acts as a 10
+
+- Version 2
+
 > Poohead AI ideas
 - Check the current card on the deck, and the cards in "hand"
 - Output a state based on this (an integer)
 - switch case for action to be taken
 - EXTENSION: Allow adding to multiplayer game, after that is implemented?
+
+- 52 Card Pickup (version 1)
+
+>52 Card Pickup ideas
+- creates a deck, then randomly spreads the cards across the page
+- players drag and drop the cards back in to the centre, pressing R when they have a card selected to flip it
+- Players are scored on time taken and order of the list

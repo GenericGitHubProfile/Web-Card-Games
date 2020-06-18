@@ -33,7 +33,6 @@ nav {
 }
 
 nav > * {
-    height: 100;
     line-height: 20px;
     padding: 10px;
 }
