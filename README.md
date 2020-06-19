@@ -73,6 +73,39 @@ Poohead
 - switch case for action to be taken
 - EXTENSION: Allow adding to multiplayer game, after that is implemented?
 
+Snap
+------
+
+>Snap Alpha
+- Player can join a game with a dud AI (fills in for a second player but doesn't do anything)
+- Player can start the game
+- All players are dealt cards in a round robin method
+- Player's cards will be displayed at the bottom of the game screen
+- Opponant's Card's will be displayed at the top of the game screen
+
+>Snap Beta
+- Players will have a button which will declare Snap
+- declaring Snap will check the stored previous card and the top card
+- If they both match, then the player will be awarded all the cards in the stack
+- If they do not match, the player will give a card to whoever last player a card, or the player before them
+- Since in this version, there is only the player and a basic AI, this will always be the AI
+- Players can play against a basic AI, which will store the last played card, check the current played card and if the values match, declare snap after a delay
+
+>Snap Version 1.0
+- Players will be able to create and join multiplayer games
+- These will be accessed using a randomly generated session key
+- Players will be able to add up to 8 players to play
+- Card placements will be sent to the server and then sent to all players for fairness (CHECK THIS?)
+- Snap declarations will be sent to the server and the first one received for that card played will be the only one considered
+- All other users connected will be notified of this result
+- Easy, Medium and Hard AI will be implemented
+- These will have different levels of delay before correctly declaring Snap, with Easy being the longest and Hard being the shortest
+- These will also have a varying chance of incorrectly declaring Snap, with Easy being most likely and Hard being least likely
+
+>Snap version 1.1
+- Player can play against multiple AI
+- Each AI will have a small variable amount of delay between declaring snap and a randomised small amount of declaring Snap incorrectly
+
 52 Card Pickup
 ---------------
 

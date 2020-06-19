@@ -1,0 +1,27 @@
+:root {
+    --Colour1: #ffffff;
+    --backgroundCol: #f9ffff;
+    --navCol: #e3ffea;
+    --navBorderCol: #075219;
+    --h1Col: #efffef;
+    --cardTopCol: #440000;
+    --cardMainCol: #feffff;
+    --black: #000000;
+    --semiTransBg: rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 48px;
+    border-bottom: 2px solid var(--navBorderCol);
+    background-color: var(--navCol);
+}
+
+nav > * {
+    line-height: 20px;
+    padding: 10px;
+}

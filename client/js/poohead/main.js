@@ -1,3 +1,4 @@
+'use strict';
 import { Card } from '../common/card.mjs';
 import { Deck } from '../common/cardDeck.mjs';
 import { PooheadHand } from './pooheadHand.mjs';

@@ -1,16 +1,32 @@
 #playerHand {
     position: absolute;
     bottom: 0;
-    left: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    left: 0;
     margin: auto;
     margin-top: auto;
     z-index: 3;
+    /* align-items: center; */
 }
 
-#playerHand > .card:hover {
+#playerHand > * {
+    display: flex;
+    flex-direction: row;
+}
+
+#playerHand > .initialCards {
+    transform: translate3d(-4rem,-4rem,0) rotate(90deg);
+}
+
+.hiddenAndShown > .shownCard {
+    transform: translate3d(0, 4.5rem, 0);
+}
+
+.hiddenAndShown > .shownCard:hover {
+    transform: translateY(3.2rem) scale(1.5);
+    z-index: 2;
+}
+
+#playerHand .card:hover {
     cursor: pointer;
 }
 
@@ -35,7 +51,6 @@
 }
 
 .card:hover {
-    transition: .1s;
     transform: translateY(-2rem) scale(1.55);
     z-index: 2;
 }

@@ -7,11 +7,12 @@
         <link rel="stylesheet" href="./css/game.css">
     </head>
     <body>
-        <nav>
+        <div id="nav"></div>
+        <!-- <nav>
             <a href="#">a</a>
             <input type="text" name="" value="">
             <a href="#">c</a>
-        </nav>
+        </nav> -->
         <div id="wrapper">
             <h1>Poohead</h1>
             <section class="options">
@@ -34,16 +35,16 @@
                 <div id="playerHand">
                     <div class="initialCards">
                         <div class="hiddenAndShown">
+                            <section class="card shownCard" id="SpadesAce"></section>
                             <section class="card faceDown hiddenCard"></section>
-                            <section class="card shownCard"></section>
                         </div>
                         <div class="hiddenAndShown">
+                            <section class="card shownCard" id="SpadesAce"></section>
                             <section class="card faceDown hiddenCard"></section>
-                            <section class="card shownCard"></section>
                         </div>
                         <div class="hiddenAndShown">
+                            <section class="card shownCard" id="SpadesAce"></section>
                             <section class="card faceDown hiddenCard"></section>
-                            <section class="card shownCard"></section>
                         </div>
                     </div>
                     <div class="personalCards">
@@ -72,6 +73,6 @@
             <section class="card shownCard"></section>
         </template>
     </body>
-    <script src="./js/client.js" charset="utf-8"></script>
+    <script src="./js/client.js" charset="utf-8" type="module"></script>
     <script src="./js/poohead/main.js" charset="utf-8" type="module"></script>
 </html>

@@ -1,5 +1,7 @@
+import * as Inject from './injectHTML.js';
+
 window.addEventListener('load', startup());
 
 function startup() {
-    //some code
+    Inject.injectHTML('./htmlFragments/nav.html', 'nav');
 }
