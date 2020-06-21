@@ -1,4 +1,4 @@
-import { BaseAI } from './baseAI.mjs';
+import { BaseAI } from '../../common/baseAI.mjs';
 
 export class HardAI {
     constructor() {

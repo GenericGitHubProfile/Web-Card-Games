@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/game.css">
+    </head>
+    <body>
+        <div id="nav"></div>
+        <!-- <nav>
+            <a href="#">a</a>
+            <input type="text" name="" value="">
+            <a href="#">c</a>
+        </nav> -->
+        <div id="wrapper">
+            <h1>Poohead</h1>
+            <section class="options">
+                <label for="noPlayers">Number of Players</label>
+                <input type="number" name="noPlayers" id="noPlayers" placeholder="number of players" min="2" max="7">
+                <button type="button" id="drawCard">Draw Card</button>
+                <button type="button" id="resetDeck">Reset Deck</button>
+                <button type="button" id="start">Start Game</button>
+            </section>
+            <main id="container">
+                <div id="opponantHand" class="personalDeck">
+                    <section class="card faceDown"></section>
+                    <section class="card faceDown"></section>
+                    <section class="card faceDown"></section>
+                    <section class="card faceDown"></section>
+                </div>
+                <div id="playedStack">
+                    <section class="card faceDown"></section>
+                    <section class="card faceDown"></section>
+                    <section class="card faceDown"></section>
+                    <section class="card topStack" id="Diamonds2"></section>
+                </div>
+                <div id="playerHand" class="personalDeck">
+                    <section class="card" id="Diamonds3"></section>
+                    <section class="card" id="Hearts3"></section>
+                    <section class="card" id="Clubs4"></section>
+                    <section class="card" id="SpadesAce"></section>
+                </div>
+            </main>
+        </div>
+        <footer>
+            <!-- footer with developer info or whatever -->
+        </footer>
+        <template id="playerCard">
+            <section class="card"></section>
+        </template>
+        <template id="opponantCard">
+            <section class="card faceDown"></section>
+        </template>
+        <template id="hiddenCard">
+            <section class="card faceDown hiddenCard"></section>
+        </template>
+        <template id="shownCard">
+            <section class="card shownCard"></section>
+        </template>
+    </body>
+    <script src="./js/client.js" charset="utf-8" type="module"></script>
+    <script src="./js/poohead/main.js" charset="utf-8" type="module"></script>
+</html>

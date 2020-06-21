@@ -22,6 +22,16 @@ Games to be implemented
 Poohead
 --------
 
+>Poohead rules
+- only play cards higher than one on top of stack
+- Ace's are high
+- can play special cards at any time
+- 2's reset the stack down to 2
+- 7's allow a user to decide if ONLY the next card is higher or lower
+- 10's remove the cards from the game, until the end of the round
+- Four of the same card value in a row acts as a 10
+- If you cannot play a hand, you pick up the entire central stack into your personal hand
+
 >Poohead Alpha
 - Players will receive 3 hidden, 3 shown and 3 personal cards at the start of a round
 - Players can select a card to be placed into the central stack
@@ -57,16 +67,6 @@ Poohead
 - when deck is empty, take all but the last played card from the played array
 - put them back into the deck array so they can be redistributed properly
 
->Poohead rules
-- only play cards higher than one on top of stack
-- Ace's are high
-- can play special cards at any time
-- 2's reset the stack down to 2
-- 7's allow a user to decide if ONLY the next card is higher or lower
-- 10's remove the cards from the game, until the end of the round
-- Four of the same card value in a row acts as a 10
-- If you cannot play a hand, you pick up the entire central stack into your personal hand
-
 > Poohead AI ideas
 - Check the current card on the deck, and the cards in "hand"
 - Output a state based on this (an integer)
@@ -75,6 +75,17 @@ Poohead
 
 Snap
 ------
+
+>Snap rules
+- Victory is achieved by gaining all the cards of the deck
+- Player turns are decided in a round robin method
+- All cards are hidden, even to the player who 'owns' that hand
+- On a player turn, the player can play their top card onto the Stack
+- If the top card matches the card directly below, players can call Snap
+- The first player to declare snap will be the only one considered for that call
+- If the top card matches the direct predecessor, then that player wins that entire Stack
+- If it does not, the player gives their top card to the player who played the card, or the player who last played if they played the last card
+- If it is an incorrect calling, the Stack itself is left alone
 
 >Snap Alpha
 - Player can join a game with a dud AI (fills in for a second player but doesn't do anything)

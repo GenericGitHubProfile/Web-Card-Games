@@ -1,5 +1,6 @@
 import { Card } from './card.mjs';
 import { DeckBase } from './deckBase.mjs';
+
 /*
 * Deck of cards, 4 suits, 13 cards per suit
 */
@@ -74,26 +75,5 @@ export class Deck extends DeckBase {
     resetDeckExcludeShuffle(excludeArr = []) {
         this.resetDeckWithoutCards(excludeArr);
         this.shuffleDeck();
-    }
-
-    /*
-    * Removes a given card
-    */
-    removeCard(card = null) {
-        if(!this._cardValue.includes(card.value) || !this._suits.includes(card.suit)) return false;
-        let cardIndex = this.findCard(card);
-        return ((cardIndex >= 0) ? this.cards.splice(cardIndex, 1) : false);
-    }
-
-    /*
-    * Finds a given card
-    */
-    findCard(card = null) {
-        if(!this._cardValue.includes(card.value) || !this._suits.includes(card.suit)) return false;
-        return this.cards.findIndex((item) => item.suit === card.suit && item.value === card.value);
-    }
-
-    deckLength() {
-        return this.cards.length;
     }
 };

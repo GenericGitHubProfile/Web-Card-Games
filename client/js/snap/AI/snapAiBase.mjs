@@ -1,7 +1,7 @@
 import { BaseAI } from '../../common/baseAI.mjs';
 
-export class EasyAI {
+export class SnapAiBase extends BaseAI {
     constructor() {
-        //
+        super();
     }
 };

@@ -6,12 +6,13 @@
         <link rel="stylesheet" href="./css/main.css">
     </head>
     <body>
-        <nav>
-            <!-- Join session place -->
+        <div id="nav"></div>
+        <!-- <nav>
+            Join session place
             <a href="#">a</a>
             <input type="text" name="" value="">
             <a href="#">c</a>
-        </nav>
+        </nav> -->
         <div id="wrapper">
             <h1>Choose a game</h1>
             <!-- cards with different games -->
@@ -25,6 +26,18 @@
                         <p>Poohead is a game whereby you try and lose all the cards that you have by placing higher cards ontop of the last placed card</p>
                         <p>2's reset, 7's allow you to choose a direction, 10's remove the pile</p>
                         <p>Aces are high</p>
+                    </div>
+                    <div class="cardFoot">
+                        <p><strong>Recommended for 2-5 players</strong></p>
+                    </div>
+                </section>
+                <section class="gameCard" name="snap">
+                    <div class="cardTop">
+                        <h2>Snap</h2>
+                    </div>
+                    <div class="cardMain">
+                        <p>Snap is a game whereby you match the top card of the pile to the one below</p>
+                        <p>The entire deck is distributed amongst players at the start</p>
                     </div>
                     <div class="cardFoot">
                         <p><strong>Recommended for 2-5 players</strong></p>
@@ -49,6 +62,6 @@
             <!-- footer with developer info or whatever -->
         </footer>
     </body>
+    <script src="./js/client.js" charset="utf-8" type="module"></script>
     <script src="./js/gameSelect/main.js" charset="utf-8"></script>
-    <script src="./js/client.js" charset="utf-8"></script>
 </html>
