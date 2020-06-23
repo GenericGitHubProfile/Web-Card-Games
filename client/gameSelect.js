@@ -4,7 +4,7 @@ Object.values(games).forEach((el) => {
         if(el.classList.contains("faceDown")) {
             alert("Unable to see");
         } else {
-            window.location.href = `./${el.attributes.name.value}.html`;
+            window.location.href = `./games/${el.attributes.name.value}`;
         }
     });
 });

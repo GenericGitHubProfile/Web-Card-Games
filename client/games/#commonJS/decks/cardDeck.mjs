@@ -15,7 +15,7 @@ export class Deck extends DeckBase {
     }
 
     /*
-    * pops card array, allows for use of card
+    * Pops card array, allows for use of card
     */
     drawCard() {
         return ((this.cards.length > 0) ? this.cards.pop() : false);

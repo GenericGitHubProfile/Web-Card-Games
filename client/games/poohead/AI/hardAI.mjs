@@ -1,4 +1,4 @@
-import { BaseAI } from '../../common/baseAI.mjs';
+import { PooheadAIBase } from './pooheadAiBase.mjs';
 
 export class HardAI {
     constructor() {

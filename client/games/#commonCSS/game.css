@@ -41,19 +41,6 @@
     top: 0;
 }
 
-#opponantHand {
-    position: absolute;
-    top: 0;
-    right: 0;
-    justify-content: flex-end;
-}
-
-.personalDeck {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-}
-
 .card {
     width: 5rem;
     height: 7rem;
