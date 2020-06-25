@@ -1,7 +1,9 @@
+import { PlayerHand } from './playerHand.mjs';
+import { CircularLinkedList } from './linkedList/circularLinkedList.mjs';
+
 export class GameBase {
-    constructor(gameName = "", noPlayers = 0) {
-        if(!gameName) throw new Error("Must give game name");
-        this.noPlayers = (checkNoPlayers(noPlayers) ? noPlayers : throw new Error(`Game Requires between ${MIN_PLAYERS} and ${MAX_PLAYERS} players to operate`));
+    constructor(gameName = "") {
+        if(!gameName) throw new SyntaxError("Must give game name");
         /*
         * Prelude is from when the game object is created and is when game setup is happening
         * Start is the first moment that a player can take an action
@@ -16,11 +18,30 @@ export class GameBase {
             END: 'End',
             POST_GAME: 'Post Game'
         });
+        this.currentGameState = GAME_STATES.PRELUDE;
         this.gameName = gameName;
-        this.players = [];
+        this.stack = [];
+        this.players = null;
     }
 
     checkNoPlayers(noPlayers) {
         return ((Number.isNaN(noPlayers) || noPlayers >= MAX_PLAYERS || noPlayers <= MIN_PLAYERS) ? false : true);
     }
-}
+
+    setGameState(state) {
+        return (!(state.toUpperCase() in GAME_STATES) ? false : this.currentGameState = state);
+    }
+
+    // addPlayer(hand) {
+    //     if(!hand.prototpye instanceof PlayerHand) return false;
+    //     this.players.push(hand);
+    // }
+
+    gameStart() {
+      throw new InternalError("Method not implemented in subclass");
+    }
+
+    nextPlayer() {
+
+    }
+};

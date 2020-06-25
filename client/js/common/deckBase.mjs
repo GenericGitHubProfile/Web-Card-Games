@@ -1,3 +1,5 @@
+import { Card } from './card.mjs';
+
 export class DeckBase {
     constructor() {
         this.cards = [];

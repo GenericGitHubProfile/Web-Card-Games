@@ -14,13 +14,19 @@
             <a href="#">c</a>
         </nav> -->
         <div id="wrapper">
-            <h1>Poohead</h1>
+            <h1>Snap</h1>
             <section class="options">
-                <label for="noPlayers">Number of Players</label>
-                <input type="number" name="noPlayers" id="noPlayers" placeholder="number of players" min="2" max="7">
-                <button type="button" id="drawCard">Draw Card</button>
-                <button type="button" id="resetDeck">Reset Deck</button>
-                <button type="button" id="start">Start Game</button>
+                <div class="general">
+                    <label for="noPlayers">Number of Players</label>
+                    <input type="number" name="noPlayers" id="noPlayers" placeholder="number of players" min="2" max="7">
+                    <button type="button" id="drawCard">Draw Card</button>
+                    <button type="button" id="resetDeck">Reset Deck</button>
+                    <button type="button" id="start">Start Game</button>
+                </div>
+                <div class="gameControls">
+                    <button type="button" name="button" id="playCard">Play Card</button>
+                    <button type="button" name="button" id="callSnap">Call Snap</button>
+                </div>
             </section>
             <main id="container">
                 <div id="opponantHand" class="personalDeck">
