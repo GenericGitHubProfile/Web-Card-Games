@@ -1,6 +1,6 @@
-import { SnapAiBase } from './snapAiBase.mjs';
+import { SnapAIBase } from './snapAiBase.mjs';
 
-export class MediumAI extends SnapAiBase {
+export class MediumAI extends SnapAIBase {
     constructor() {
         super();
     }

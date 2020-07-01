@@ -6,7 +6,8 @@ import { SnapGame } from './snapGame.mjs';
 
 let startGame = document.getElementById('start');
 startGame.addEventListener('click', (e) => {
-    // DO things
+    // Create and Initiate SNAP_GAME object
+    // This will handle and manage all functions relating to playing Snap
     const SNAP_GAME = new SnapGame();
     try {
         SNAP_GAME.gameStart(document.getElementById('noPlayers').value);
@@ -18,6 +19,10 @@ startGame.addEventListener('click', (e) => {
     gameLoop(SNAP_GAME);
 });
 
+/*
+* Will play until the Game ends
+* occurs when either a player wins, there is one or less players left in the lobby
+*/
 async function gameLoop(GAME) {
 
 }

@@ -1,5 +1,10 @@
 import { LinkedList } from './linkedList.mjs';
 
+/*
+* Node for a circularly linked list
+* contains a single piece of data, regardless of type
+* contains a pointer to the next Node in the list
+*/
 class Node {
     constructor(data) {
         this.data = data;
@@ -7,12 +12,21 @@ class Node {
     }
 };
 
+/*
+* Circularly Linked List (CLL)
+*/
 export class CircularLinkedList extends LinkedList  {
+    /*
+    * No Nodes are added upon creation
+    */
     constructor() {
         this.length = 0;
         this.head = null;
     }
 
+    /*
+    * Creates a Node and adds it to the start of the CLL
+    */
     prependNode(data) {
         let newNode = new Node(data);
         if(this.length === 0) {
@@ -32,6 +46,9 @@ export class CircularLinkedList extends LinkedList  {
         this.length++;
     }
 
+    /*
+    * Creates a Node and adds it to the end of the CLL
+    */
     appendNode(data) {
         let newNode = new Node(data);
         if(this.length === 0) {
@@ -51,6 +68,9 @@ export class CircularLinkedList extends LinkedList  {
         this.length++;
     }
 
+    /*
+    * Deletes a Node matching the given data
+    */
     deleteNode(data) {
         if(this.length === 0) {
             return;
@@ -79,6 +99,9 @@ export class CircularLinkedList extends LinkedList  {
         this.length--;
     }
 
+    /*
+    * Finds a Node of the given data
+    */
     findNode(data) {
         let curNode = this.head;
 

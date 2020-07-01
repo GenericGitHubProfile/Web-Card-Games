@@ -37,6 +37,9 @@ export class GameBase {
     //     this.players.push(hand);
     // }
 
+    /*
+    * Must be implemented in sub-classes, will throw an error otherwise
+    */
     gameStart() {
       throw new InternalError("Method not implemented in subclass");
     }

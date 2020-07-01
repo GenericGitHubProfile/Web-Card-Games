@@ -1,6 +1,6 @@
-import { BaseAI } from '../../common/baseAI.mjs';
+import { PooheadAIBase } from './pooheadAiBase.mjs';
 
-export class EasyAI {
+export class EasyAI extends PooheadAIBase {
     constructor() {
         //
     }

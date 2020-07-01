@@ -72,6 +72,10 @@
     z-index: 4;
 }
 
+/*
+* TO BE MOVED TO THE 'cardFaces.css' FILE WHEN IMAGES ARE COMPLETE
+*/
+
 #SpadesAce {
     background-image: url(../cards/spades/AS.png);
 }

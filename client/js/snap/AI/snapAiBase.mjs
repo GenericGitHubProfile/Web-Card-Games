@@ -1,6 +1,6 @@
 import { BaseAI } from '../../common/baseAI.mjs';
 
-export class SnapAiBase extends BaseAI {
+export class SnapAIBase extends BaseAI {
     constructor() {
         super();
         // Delay before AI calls snap
