@@ -3,8 +3,9 @@ import { Card } from './card.mjs';
 export class DeckBase {
     constructor() {
         this.cards = [];
-        this._suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
-        this._cardValue = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
+        this._suits = Object.freeze({CLUBS: 'Clubs', DIAMONDS: 'Diamonds', HEARTS: 'Hearts', SPADES: 'Spades'})
+        this._cardValue = Object.freeze({ACE: 'Ace',TWO: '2',THREE: '3',FOUR: '4',FIVE: '5',SIX: '6',SEVEN: '7',EIGHT: '8',NINE: '9',TEN: '10',JACK: 'Jack',QUEEN: 'Queen',KING: 'King'
+        });
     }
 
     /*

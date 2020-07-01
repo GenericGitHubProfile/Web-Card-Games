@@ -36,8 +36,8 @@ export class Deck extends DeckBase {
     */
     resetDeck() {
         this.cards = [];
-        this._suits.forEach((item, i) => {
-            this._cardValue.forEach((el, j) => {
+        Object.values(this._suits).forEach((item, i) => {
+            Object.values(this._cardValue).forEach((el, j) => {
                 this.cards.push(new Card(item, el));
             });
         });
@@ -58,8 +58,8 @@ export class Deck extends DeckBase {
         // Assume the excludeArr only contains Card objects
         this.cards = [];
         console.log(excludeArr);
-        this._suits.forEach((item, i) => {
-            this._cardValue.forEach((el, j) => {
+        Object.values(this._suits).forEach((item, i) => {
+            Object.values(this._cardValue).forEach((el, j) => {
                 let newCard = new Card(item, el);
                 if (!excludeArr.some((e) => (e.suit === item && e.value === el))) {
                     this.cards.push(newCard);
