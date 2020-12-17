@@ -91,16 +91,17 @@ Snap
 - Player can join a game with a dud AI (fills in for a second player but doesn't do anything)
 - Player can start the game
 - All players are dealt cards in a round robin method
-- Player's cards will be displayed at the bottom of the game screen
-- Opponant's Card's will be displayed at the top of the game screen
-
->Snap Beta
 - Players will have a button which will declare Snap
 - declaring Snap will check the stored previous card and the top card
 - If they both match, then the player will be awarded all the cards in the stack
 - If they do not match, the player will give a card to whoever last player a card, or the player before them
+- Played in the browser console
+
+>Snap Beta
 - Since in this version, there is only the player and a basic AI, this will always be the AI
 - Players can play against a basic AI, which will store the last played card, check the current played card and if the values match, declare snap after a delay
+- Player's cards will be displayed at the bottom of the game screen
+- Opponant's Card's will be displayed at the top of the game screen
 
 >Snap Version 1.0
 - Players will be able to create and join multiplayer games

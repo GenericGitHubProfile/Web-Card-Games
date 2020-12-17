@@ -11,25 +11,25 @@ export class GameBase {
         * End deals with wrapping up the game and congratulating users, etc.
         * Post Game is after the players have accepted this and can restart etc.
         */
-        const GAME_STATES = Object.freeze({
+        this.GAME_STATES = Object.freeze({
             PRELUDE: 'Prelude',
             START: 'Start',
             IN_PROGRESS: 'In Progress',
             END: 'End',
             POST_GAME: 'Post Game'
         });
-        this.currentGameState = GAME_STATES.PRELUDE;
+        this.currentGameState = this.GAME_STATES.PRELUDE;
         this.gameName = gameName;
         this.stack = [];
         this.players = null;
     }
 
     checkNoPlayers(noPlayers) {
-        return ((Number.isNaN(noPlayers) || noPlayers >= MAX_PLAYERS || noPlayers <= MIN_PLAYERS) ? false : true);
+        return ((Number.isNaN(noPlayers) || noPlayers > this.MAX_PLAYERS || noPlayers < this.MIN_PLAYERS) ? false : true);
     }
 
     setGameState(state) {
-        return (!(state.toUpperCase() in GAME_STATES) ? false : this.currentGameState = state);
+        return (!(state.toUpperCase() in this.GAME_STATES) ? false : this.currentGameState = state);
     }
 
     // addPlayer(hand) {

@@ -20,8 +20,7 @@ export class CircularLinkedList extends LinkedList  {
     * No Nodes are added upon creation
     */
     constructor() {
-        this.length = 0;
-        this.head = null;
+        super();
     }
 
     /*

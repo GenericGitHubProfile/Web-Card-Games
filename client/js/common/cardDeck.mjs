@@ -1,4 +1,5 @@
 import { DeckBase } from './deckBase.mjs';
+import { Card } from './card.mjs';
 
 /*
 * Deck of cards, 4 suits, 13 cards per suit
@@ -9,12 +10,15 @@ export class Deck extends DeckBase {
     */
     constructor() {
         super();
+        // console.log(this);
         // Populates the initial Deck
         this.resetDeckAndShuffle();
+        // this.resetDeck();
     }
 
     /*
     * pops card array, allows for use of card
+    * (Neccessary?)
     */
     drawCard() {
         return ((this.cards.length > 0) ? this.cards.pop() : false);
@@ -32,15 +36,15 @@ export class Deck extends DeckBase {
 
     /*
     * Resets the deck to the original 52
-    * CHANGE: have an array parameter, with default being empty array for cards to exclude?
     */
     resetDeck() {
-        this.cards = [];
-        Object.values(this._suits).forEach((item, i) => {
-            Object.values(this._cardValue).forEach((el, j) => {
-                this.cards.push(new Card(item, el));
+        let fullDeck = new Array();
+        Object.values(this._suits).forEach((suit, i) => {
+            Object.values(this._cardValue).forEach((value, j) => {
+                fullDeck.push(new Card(suit, value));
             });
         });
+        this.cards = fullDeck;
     }
 
     /*
@@ -56,16 +60,17 @@ export class Deck extends DeckBase {
     */
     resetDeckWithoutCards(excludeArr = []) {
         // Assume the excludeArr only contains Card objects
-        this.cards = [];
+        let mostlyFullDeck = new Array();
         console.log(excludeArr);
-        Object.values(this._suits).forEach((item, i) => {
-            Object.values(this._cardValue).forEach((el, j) => {
-                let newCard = new Card(item, el);
+        Object.values(this._suits).forEach((suit, i) => {
+            Object.values(this._cardValue).forEach((value, j) => {
+                let newCard = new Card(suit, value);
                 if (!excludeArr.some((e) => (e.suit === item && e.value === el))) {
-                    this.cards.push(newCard);
+                    mostlyFullDeck.push(newCard);
                 }
             });
         });
+        this.cards = mostlyFullDeck;
     }
 
     /*
