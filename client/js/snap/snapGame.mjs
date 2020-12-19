@@ -59,11 +59,17 @@ export class SnapGame extends GameBase {
         // unshift : so we can constantly use stack[0], rather than calculate length each time
         this.stack.unshift(this.currentPlayer.data.cards.pop());
 
-        console.log(this.stack);
-        console.log(this.stack[0].value === this.stack[1].value);
+        // console.log(this.stack);
+        if(this.stack.length > 1) {
+            console.log(`${this.stack[0].value}\t${this.stack[1].value}`);
+        } else {
+            console.log("single card");
+        }
+        // console.log(this.stack[0].value === this.stack[1].value);
 
         // Swap active player to next
         this.currentPlayer = this.currentPlayer.next;
+        console.log(`PlayerID: ${this.currentPlayer.data.playerID}\nPlayerNoCards: ${this.currentPlayer.data.cards.length}`);
     }
 
     callSnap(player = null) {

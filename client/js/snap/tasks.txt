@@ -1,0 +1,6 @@
+MOST IMPORTANT TASKS
+- Improve console UI readability
+- Dynamically create buttons for each player based on number of players, map those to be a single player's input
+--> Map those to keyboard shortcuts so people can play a rudimentary local multiplayer for testing purposes
+
+- 

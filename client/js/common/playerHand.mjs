@@ -16,8 +16,6 @@ export class PlayerHand extends DeckBase {
     */
     addCardToDeck(card) {
         // if(!this._cardValue.hasOwnProperty(card.value) || !this._suits.hasOwnProperty(card.suit)) return false;
-        // console.log(this._cardValue.hasOwnProperty(card.value));
-        // console.log(card.value);
         this.cards.push(card);
     }
 
