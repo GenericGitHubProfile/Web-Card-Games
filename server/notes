@@ -1,0 +1,40 @@
+Data needing to be passed to keep players up to date with a game:
+- Game Type: i.e. Snap, etc.
+- No Players
+- Current Game State:
+  - Player hands
+  - Central Stack
+  - Game state enum
+  - Last Action
+  - Player's turn
+  - Timestamp
+
+
+
+e.g.
+
+{
+  type: "snap",
+  players: [
+    {
+      playerNo: 1,
+      currentHand: [
+        {
+          suit: "hearts",
+          value: "3"
+        },
+        {
+          suit: "clubs",
+          value: "king"
+        }, etc.
+      ]
+    }
+  ],
+  lastAction: {
+    playerNo: 2,
+    action: {
+      type: "callSnap",
+      result: "failure"
+    }
+  }
+}
